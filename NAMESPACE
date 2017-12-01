@@ -2,5 +2,10 @@
 
 export(clipboard)
 export(count_lines)
+export(dir_stack)
+export(element_count)
 export(scan_file)
 export(side_summary)
+export(to_date)
+export(to_week)
+importFrom(methods,missingArg)
