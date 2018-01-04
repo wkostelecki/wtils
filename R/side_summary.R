@@ -42,20 +42,20 @@ column_summary = function(x, ...){
 
 column_summary.default = function(x, ...){
 
-  data.frame(Min = NA_character_,
-             Med = NA_character_,
-             Mean = NA_character_,
-             Max = NA_character_,
-             NAs = as.character(signif(sum(is.na(x)), 3)),
+  data.frame(Min = NA_real_,
+             Med = NA_real_,
+             Mean = NA_real_,
+             Max = NA_real_,
+             NAs = sum(is.na(x)),
              stringsAsFactors = FALSE)
 
 }
 
 column_summary.numeric = function(x, ...){
-  data.frame(Min = as.character(signif(min(x, na.rm = TRUE), 3)),
-             Med = as.character(signif(median(x, na.rm = TRUE), 3)),
-             Mean = as.character(signif(mean(x, na.rm = TRUE), 3)),
-             Max = as.character(signif(max(x, na.rm = TRUE), 3)),
-             NAs = as.character(signif(sum(is.na(x)), 3)),
+  data.frame(Min = signif(min(x, na.rm = TRUE), 3),
+             Med = signif(median(x, na.rm = TRUE), 3),
+             Mean =signif(mean(x, na.rm = TRUE), 3),
+             Max = signif(max(x, na.rm = TRUE), 3),
+             NAs = signif(sum(is.na(x)), 3),
              stringsAsFactors = FALSE)
 }
