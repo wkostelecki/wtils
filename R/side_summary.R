@@ -46,6 +46,7 @@ column_summary.default = function(x, ...){
              Med = NA_real_,
              Mean = NA_real_,
              Max = NA_real_,
+             Sum = NA_real_,
              NAs = sum(is.na(x)),
              stringsAsFactors = FALSE)
 
@@ -54,8 +55,9 @@ column_summary.default = function(x, ...){
 column_summary.numeric = function(x, ...){
   data.frame(Min = signif(min(x, na.rm = TRUE), 3),
              Med = signif(median(x, na.rm = TRUE), 3),
-             Mean =signif(mean(x, na.rm = TRUE), 3),
+             Mean = signif(mean(x, na.rm = TRUE), 3),
              Max = signif(max(x, na.rm = TRUE), 3),
+             Sum = sum(x, na.rm = TRUE),
              NAs = signif(sum(is.na(x)), 3),
              stringsAsFactors = FALSE)
 }
