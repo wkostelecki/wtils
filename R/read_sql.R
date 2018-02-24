@@ -1,9 +1,11 @@
 #' read_sql
-#' @param file relative or absolute path to SQL query file.
+#' @param file Relative or absolute path to SQL query file.
 #'
 #' @export
 read_sql = function(file) {
 
-  paste(readLines(file), collapse = "\n")
+  lines = readLines(file)
+  lines = sub(" *--.*$", "", lines)
+  paste(lines[lines != ""], collapse = "\n")
 
 }
