@@ -3,6 +3,7 @@
 export(clipboard)
 export(count_elements)
 export(count_lines)
+export(dir_stack)
 export(na_profile)
 export(read_sql)
 export(scan_file)
