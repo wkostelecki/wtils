@@ -57,7 +57,7 @@ column_summary.numeric = function(x, ...){
              Med = signif(median(x, na.rm = TRUE), 3),
              Mean = signif(mean(x, na.rm = TRUE), 3),
              Max = signif(max(x, na.rm = TRUE), 3),
-             Sum = sum(x, na.rm = TRUE),
+             Sum = sum(as.numeric(x), na.rm = TRUE),
              NAs = signif(sum(is.na(x)), 3),
              stringsAsFactors = FALSE)
 }

@@ -7,7 +7,7 @@
 read_sql(file)
 }
 \arguments{
-\item{file}{relative or absolute path to SQL query file.}
+\item{file}{Relative or absolute path to SQL query file.}
 }
 \description{
 read_sql
