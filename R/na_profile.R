@@ -25,7 +25,7 @@ na_profile = function(data, all_cols = FALSE) {
 
   x = x[ord] %>%
     dplyr::mutate(..na_profile.. = 1) %>%
-    dplyr::group_by_(., .dots = names(.)) %>%
+    dplyr::group_by_at(vars(names(.))) %>%
     dplyr::summarize(n()) %>%
     dplyr::ungroup() %>%
     dplyr::arrange(dplyr::desc(`n()`)) %>%
@@ -34,7 +34,7 @@ na_profile = function(data, all_cols = FALSE) {
 
   x[["na"]] = apply(x[, seq_len(ncol(x) - 1)], 1, function(x) sum(is.na(x)))
 
-  rbind(c(top[ord], "", ""),
+  rbind(c(paste(top[ord], rep("NAs", length(ord))), "", ""),
         x %>%
           dplyr::mutate_all(as.character))
 
