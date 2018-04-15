@@ -4,18 +4,20 @@
 \alias{side_summary}
 \title{side_summary}
 \usage{
-side_summary(data, ..., unique = FALSE, sample = FALSE)
+side_summary(data, extra = NULL)
 }
 \arguments{
 \item{data}{A data.frame.}
-
-\item{...}{Extra inputs.}
 }
 \description{
 side_summary
 }
 \examples{
 side_summary(mtcars)
-side_summary(mtcars, unique = T)
-side_summary(mtcars, unique = T, sample = T)
+side_summary(mtcars, extra = "unique")
+side_summary(mtcars, extra = c("unique", "sample"))
+
+library(dplyr)
+mtcars \%>\% mutate(n = rnorm(n()), x = runif(n()) > 0.5) \%>\% side_summary
+mtcars \%>\% mutate(vs = as.character(vs)) \%>\% side_summary
 }
