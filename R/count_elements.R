@@ -2,13 +2,14 @@
 #' @param x A character vector. Usually, the output from \code{readLines()}.
 #' @param sep A separator used in \code{x}.
 #' @examples
-#' text = c("a,b", "b,d", 'a,",,d"', "a, b, c, d")
+#' text = c("a,b,c", 'a,",,b",c')
 #' count_elements(text)
+#' count_elements(text, ",", '')
 #' @export
-count_elements = function(x, sep = ",", quote = NULL) {
+count_elements = function(text, sep = ",", quote = "\"") {
   if (!is.null(quote)) {
-    x = gsub(paste0(quote, ".*?", quote), "", x)
+    text = gsub(paste0(quote, ".*?", quote), "", text)
   }
-  x = paste0(x, sep, "x")
-  sapply(strsplit(x, sep), length) - 1
+  text = paste0(text, sep, "x")
+  sapply(strsplit(text, sep), length) - 1
 }

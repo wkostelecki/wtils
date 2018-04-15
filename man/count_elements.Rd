@@ -4,17 +4,18 @@
 \alias{count_elements}
 \title{count_elements}
 \usage{
-count_elements(x, sep = ",", quote = NULL)
+count_elements(text, sep = ",", quote = "\\"")
 }
 \arguments{
-\item{x}{A character vector. Usually, the output from \code{readLines()}.}
-
 \item{sep}{A separator used in \code{x}.}
+
+\item{x}{A character vector. Usually, the output from \code{readLines()}.}
 }
 \description{
 count_elements
 }
 \examples{
-text = c("a,b", "b,d", 'a,",,d"', "a, b, c, d")
+text = c("a,b,c", 'a,",,b",c')
 count_elements(text)
+count_elements(text, ",", '')
 }
