@@ -25,7 +25,7 @@ na_profile = function(data, all_cols = FALSE) {
 
   x = x[ord] %>%
     dplyr::mutate(..na_profile.. = 1) %>%
-    dplyr::group_by_at(vars(names(.))) %>%
+    dplyr::group_by_at(dplyr::vars(names(.))) %>%
     dplyr::summarize(n()) %>%
     dplyr::ungroup() %>%
     dplyr::arrange(dplyr::desc(`n()`)) %>%
