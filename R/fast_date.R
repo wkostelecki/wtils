@@ -1,13 +1,13 @@
-#' as_date
+#' fast_date
 #' @description Faster alternative to as.Date. Converts character vectors to factors
 #' and converts unique values to dates.
 #' @param x Character or factor vector of dates.
 #' @param format Date format string.
 #' @examples
-#' as_date("2010-01-01")
+#' fast_date("2010-01-01")
 #'
 #' @export
-as_date = function(x, format = "%Y-%m-%d"){
+fast_date = function(x, format = "%Y-%m-%d"){
 
   if (lubridate::is.Date(x)) {
     return(x)
