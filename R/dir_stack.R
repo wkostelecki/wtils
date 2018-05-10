@@ -6,11 +6,12 @@
 #'   /code{pattern} and \code{recursive} are ignored.
 #' @param ind Logical or numeric indices used to subset file_paths.
 #' @param recursive passed to \code{list.files()}
-#' @param func A function for processing object read in by \code{read.func()}
-#' @param read.func A function for reading in files specified in \code{file_paths}.
+#' @param func A function for processing object read in by \code{read_func()}
+#' @param read_func A function for reading in files specified in \code{file_paths}.
 #' @param verbose \code{TRUE} or \code{FALSE}. Default is \code{FALSE}.
 #'
 #' @return A data.frame.
+#' @importFrom utils read.csv
 #' @export
 dir_stack = function (path = ".",
                       pattern = "\\.csv$",
@@ -18,7 +19,7 @@ dir_stack = function (path = ".",
                       ind = NULL,
                       recursive = FALSE,
                       func = NULL,
-                      read.func = function(x) read.csv(x, stringsAsFactors = FALSE),
+                      read_func = function(x) read.csv(x, stringsAsFactors = FALSE),
                       verbose = FALSE) {
 
   if (verbose) {
@@ -48,7 +49,7 @@ dir_stack = function (path = ".",
       writeLines(sprintf("%d of %d", i_file, length(file_paths)))
     }
 
-    data[[i_file]] = read.func(file_paths[i_file])
+    data[[i_file]] = read_func(file_paths[i_file])
 
     if (verbose) {
       writeLines(sprintf("Table Dimensions: %d x %d", nrow(data[[i_file]]),
