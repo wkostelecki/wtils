@@ -8,6 +8,9 @@ side_summary(data, extra = NULL)
 }
 \arguments{
 \item{data}{A data.frame.}
+
+\item{extra}{A character vector of extra columns to add to summary. Default
+is NULL. Options are unique and sample.}
 }
 \description{
 side_summary

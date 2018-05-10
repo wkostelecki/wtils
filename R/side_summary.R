@@ -1,7 +1,9 @@
 #' side_summary
 #' @export
 #' @param data A data.frame.
-#'
+#' @param extra A character vector of extra columns to add to summary. Default
+#'   is NULL. Options are unique and sample.
+#' @importFrom stats median reorder
 #' @examples
 #' side_summary(mtcars)
 #' side_summary(mtcars, extra = "unique")
@@ -11,6 +13,10 @@
 #' mtcars %>% mutate(n = rnorm(n()), x = runif(n()) > 0.5) %>% side_summary
 #' mtcars %>% mutate(vs = as.character(vs)) %>% side_summary
 side_summary = function(data, extra = NULL) {
+
+  if (any(extra == "all")){
+    extra = c("unique", "sample")
+  }
 
   summaries = sapply(data, function(x) column_summary(x),
                      simplify = FALSE)
