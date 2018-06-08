@@ -1,4 +1,11 @@
-
+#' scan_file
+#' @param file path to a text file
+#' @param n chunk size
+#' @param read_func function to use for reading file
+#' @param header logical indicating whether file has a header
+#' @param agg_func aggregation function for each chunk
+#' @param verbose logical
+#' @importFrom utils read.csv
 #' @export
 scan_file = function(file,
                      n = 10000,

@@ -1,6 +1,7 @@
 #' count_elements
-#' @param x A character vector. Usually, the output from \code{readLines()}.
+#' @param text A character vector. Usually, the output from \code{readLines()}.
 #' @param sep A separator used in \code{x}.
+#' @param quote Quote character.
 #' @examples
 #' text = c("a,b,c", 'a,",,b",c')
 #' count_elements(text)

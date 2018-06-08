@@ -7,9 +7,11 @@
 count_elements(text, sep = ",", quote = "\\"")
 }
 \arguments{
+\item{text}{A character vector. Usually, the output from \code{readLines()}.}
+
 \item{sep}{A separator used in \code{x}.}
 
-\item{x}{A character vector. Usually, the output from \code{readLines()}.}
+\item{quote}{Quote character.}
 }
 \description{
 count_elements

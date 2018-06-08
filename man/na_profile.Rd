@@ -6,6 +6,11 @@
 \usage{
 na_profile(data, all_cols = FALSE)
 }
+\arguments{
+\item{data}{A data.frame.}
+
+\item{all_cols}{A character vector of column names.}
+}
 \description{
 na_profile
 }

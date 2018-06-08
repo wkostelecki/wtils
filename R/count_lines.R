@@ -1,4 +1,9 @@
 
+#' count_lines
+#' @description counts the number of lines in a text file
+#' @param file path to text file
+#' @param n chunk size to read in at a time
+#' @param verbose logical
 #' @export
 count_lines = function(file, n = 10000, verbose = FALSE){
   con = file(file, open = "r")

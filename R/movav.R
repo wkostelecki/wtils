@@ -1,4 +1,5 @@
 #' Moving average of a vector
+#' @description Calculates the moving average of a vector.
 #' @param x A numeric vector.
 #' @param n Number of values to average.
 #' @param na.rm A logical. Whether or not to treat NAs as 0.
