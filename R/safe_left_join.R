@@ -4,9 +4,10 @@
 #' @param x table to join
 #' @param y table to join
 #' @param by a character vector of column names to join by.
+#' @param verbose Default is TRUE.
 #' @export
 
-safe_left_join = function (x, y, by = NULL) {
+safe_left_join = function (x, y, by = NULL, verbose = TRUE) {
   rows_start = nrow(x)
 
   if (is.null(by)) {
@@ -25,7 +26,7 @@ safe_left_join = function (x, y, by = NULL) {
   if (any(ind <- is.na(x[["..1.."]]))) {
     sample = sample(which(ind), min(10, sum(ind)))
     examples = distinct(x[sample, by, drop = FALSE])
-    print(examples)
+    if (verbose) print(examples)
     stop(sprintf("Failed to match %d rows in x.", sum(ind)))
   }
 

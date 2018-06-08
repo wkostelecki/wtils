@@ -4,7 +4,7 @@
 \alias{safe_left_join}
 \title{safe_left_join}
 \usage{
-safe_left_join(x, y, by = NULL)
+safe_left_join(x, y, by = NULL, verbose = TRUE)
 }
 \arguments{
 \item{x}{table to join}
@@ -12,6 +12,8 @@ safe_left_join(x, y, by = NULL)
 \item{y}{table to join}
 
 \item{by}{a character vector of column names to join by.}
+
+\item{verbose}{Default is TRUE.}
 }
 \description{
 left join that fails if a row in x is either duplicated or
