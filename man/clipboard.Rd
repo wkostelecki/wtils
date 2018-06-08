@@ -4,7 +4,7 @@
 \alias{clipboard}
 \title{clipboard}
 \usage{
-clipboard(x = NULL, alloc = 2048)
+clipboard(x = NULL, alloc = 2048, ...)
 }
 \arguments{
 \item{x}{A data.frame.}

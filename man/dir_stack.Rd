@@ -5,7 +5,7 @@
 \title{dir_stack}
 \usage{
 dir_stack(path = ".", pattern = "\\\\.csv$", file_paths = NULL,
-  ind = NULL, recursive = FALSE, func = NULL, read.func = function(x)
+  ind = NULL, recursive = FALSE, func = NULL, read_func = function(x)
   read.csv(x, stringsAsFactors = FALSE), verbose = FALSE)
 }
 \arguments{
@@ -20,9 +20,9 @@ dir_stack(path = ".", pattern = "\\\\.csv$", file_paths = NULL,
 
 \item{recursive}{passed to \code{list.files()}}
 
-\item{func}{A function for processing object read in by \code{read.func()}}
+\item{func}{A function for processing object read in by \code{read_func()}}
 
-\item{read.func}{A function for reading in files specified in \code{file_paths}.}
+\item{read_func}{A function for reading in files specified in \code{file_paths}.}
 
 \item{verbose}{\code{TRUE} or \code{FALSE}. Default is \code{FALSE}.}
 }

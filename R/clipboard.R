@@ -10,9 +10,9 @@
 #' @examples
 #' clipboard(mtcars)
 #' print(clipboard())
-clipboard = function (x = NULL, alloc = 2048) {
+clipboard = function (x = NULL, alloc = 2048, ...) {
   if (is.null(x)) {
-    utils::read.table("clipboard", header = TRUE, sep = "\t")
+    utils::read.table("clipboard", header = TRUE, sep = "\t", ...)
   } else {
     stopifnot(is.data.frame(x))
     stopifnot(is.numeric(alloc))

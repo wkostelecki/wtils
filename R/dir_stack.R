@@ -56,7 +56,8 @@ dir_stack = function (path = ".",
                          ncol(data[[i_file]])))
     }
     if (!is.null(func)) {
-      data[[i_file]] = func(data[[i_file]])
+      x = data[[i_file]]
+      data[[i_file]] = func(x)
       if (verbose) {
         writeLines(sprintf("Dimensions After Processing: %d x %d",
                            nrow(data[[i_file]]), ncol(data[[i_file]])))
