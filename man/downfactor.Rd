@@ -7,12 +7,17 @@
 downfactor(x, y = rep(1, length(x)), n = 5)
 }
 \arguments{
-\item{x}{A character or factor vector}
+\item{x}{A character or factor vector.}
 
-\item{y}{A numeric vector}
+\item{y}{A numeric vector used for aggregating and ordering factor levels.}
 
-\item{n}{Number of factors to retain}
+\item{n}{Number of factor levels to retain.}
 }
 \description{
-downfactor
+Retains/sorts the \code{n} largest levels of a character or
+  factor vector and converts the remaining levels to \code{"Other"}.
+}
+\examples{
+downfactor(letters, n = 10)
+downfactor(letters, seq_along(letters), n = 10)
 }
