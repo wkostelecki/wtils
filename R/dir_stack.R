@@ -81,8 +81,7 @@ dir_stack = function (path = ".",
 
 }
 
-
-
+globalVariables("source_file")
 
 unused_name = function(x,
                        y = c(),

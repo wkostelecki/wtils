@@ -11,6 +11,8 @@ clipboard(x = NULL, alloc = 2048, ...)
 
 \item{alloc}{Memory to allocate for copied data.frame. Should be a power of
 2.}
+
+\item{...}{extra arguments for read.table}
 }
 \value{
 A data.frame

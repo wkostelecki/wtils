@@ -4,6 +4,7 @@
 #' @param x A data.frame.
 #' @param alloc Memory to allocate for copied data.frame. Should be a power of
 #'   2.
+#' @param ... extra arguments for read.table
 #'
 #' @return A data.frame
 #' @export
