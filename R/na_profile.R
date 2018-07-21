@@ -38,9 +38,12 @@ na_profile = function(data, all_cols = FALSE) {
     dplyr::arrange(dplyr::desc(`n()`)) %>%
     as.data.frame
   x[["..na_profile.."]] = NULL
-  x[["na"]] = apply(x[, seq_len(ncol(x) - 1)], 1, function(x) sum(is.na(x)))
+  x[["na"]] = apply(x[, seq_len(ncol(x) - 1), drop = FALSE],
+                    1,
+                    function(x) sum(is.na(x)))
 
-  rbind(c(paste(top[ord], rep("NAs", length(ord))), "", ""),
+  # rbind(c(paste(top[ord], rep("NAs", length(ord))), "", ""),
+  rbind(c(paste0("(", top[ord], ifelse(top[ord] == 1, " NA)", " NAs)")), "", ""),
         x %>%
           dplyr::mutate_all(as.character))
 
