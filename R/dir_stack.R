@@ -43,7 +43,7 @@ dir_stack = function (path = ".",
   }
 
   data = vector("list", length(file_paths))
-  for (i_file in 1:length(file_paths)) {
+  for (i_file in seq_along(file_paths)) {
     if (verbose) {
       writeLines(file_paths[i_file])
       writeLines(sprintf("%d of %d", i_file, length(file_paths)))
@@ -70,6 +70,8 @@ dir_stack = function (path = ".",
   }
 
   data = dplyr::bind_rows(data)
+  data = bind_cols(select(data, -source_file),
+                   select(data, source_file))
 
   if (verbose) {
     print(Sys.time() - start_time)
