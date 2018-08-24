@@ -15,4 +15,8 @@ Imports:
 Suggests:
   testthat,
   lubridate,
-  forcats
+  forcats,
+  readxl,
+  stats,
+  tidyr,
+  utils
