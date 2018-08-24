@@ -1,0 +1,4 @@
+Name: Open File
+Description: Opens highlighted path
+Binding: open_file_addin
+Interactive: false
