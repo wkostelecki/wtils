@@ -3,6 +3,7 @@
 export(clipboard)
 export(count_elements)
 export(count_lines)
+export(df_col_comparison)
 export(dir_stack)
 export(downfactor)
 export(excel_as_date)
