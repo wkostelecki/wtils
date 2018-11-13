@@ -5,8 +5,9 @@
 \title{dir_stack}
 \usage{
 dir_stack(path = ".", pattern = "\\\\.csv$", file_paths = NULL,
-  ind = NULL, recursive = FALSE, func = NULL, read_func = function(x)
-  read.csv(x, stringsAsFactors = FALSE), verbose = FALSE)
+  ind = NULL, recursive = FALSE, func = NULL,
+  read_func = function(x) read.csv(x, stringsAsFactors = FALSE),
+  verbose = FALSE, bind_rows = TRUE)
 }
 \arguments{
 \item{path}{Path to a directory.}
@@ -25,6 +26,8 @@ dir_stack(path = ".", pattern = "\\\\.csv$", file_paths = NULL,
 \item{read_func}{A function for reading in files specified in \code{file_paths}.}
 
 \item{verbose}{\code{TRUE} or \code{FALSE}. Default is \code{FALSE}.}
+
+\item{bind_rows}{logical}
 }
 \value{
 A data.frame.

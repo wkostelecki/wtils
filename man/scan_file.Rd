@@ -4,8 +4,8 @@
 \alias{scan_file}
 \title{scan_file}
 \usage{
-scan_file(file, n = 10000, read_func = function(file, nrows, header) {    
-  read.csv(file, nrows = nrows, header = header) }, header = FALSE,
+scan_file(file, n = 10000, read_func = function(file, nrows, header) { 
+     read.csv(file, nrows = nrows, header = header) }, header = FALSE,
   agg_func = econ::side_summary, verbose = FALSE)
 }
 \arguments{

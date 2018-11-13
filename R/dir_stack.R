@@ -9,6 +9,7 @@
 #' @param func A function for processing object read in by \code{read_func()}
 #' @param read_func A function for reading in files specified in \code{file_paths}.
 #' @param verbose \code{TRUE} or \code{FALSE}. Default is \code{FALSE}.
+#' @param bind_rows logical
 #'
 #' @return A data.frame.
 #' @importFrom utils read.csv
@@ -20,7 +21,8 @@ dir_stack = function (path = ".",
                       recursive = FALSE,
                       func = NULL,
                       read_func = function(x) read.csv(x, stringsAsFactors = FALSE),
-                      verbose = FALSE) {
+                      verbose = FALSE,
+                      bind_rows = TRUE) {
 
   if (verbose) {
     start_time = Sys.time()
@@ -69,9 +71,12 @@ dir_stack = function (path = ".",
     }
   }
 
-  data = dplyr::bind_rows(data)
-  data = bind_cols(select(data, -source_file),
-                   select(data, source_file))
+  if (bind_rows) {
+    data = dplyr::bind_rows(data)
+    # move source_file column to the end of the data.frame
+    data = bind_cols(select(data, -source_file),
+                     select(data, source_file))
+  }
 
   if (verbose) {
     print(Sys.time() - start_time)

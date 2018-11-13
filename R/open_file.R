@@ -1,4 +1,4 @@
-
+#' open_file_addin
 #' @export
 #' @examples
 #' "inst/extdata/"

@@ -4,8 +4,9 @@
 \alias{read_excel2}
 \title{read_excel2}
 \usage{
-read_excel2(path, sheet = NULL, data_row = 2, cat_header_row = data_row -
-  1, val_header_row = data_row - 1, first_val_col = NULL, gather = FALSE)
+read_excel2(path, sheet = NULL, data_row = 2,
+  cat_header_row = data_row - 1, val_header_row = data_row - 1,
+  first_val_col = NULL, gather = FALSE)
 }
 \description{
 read_excel2
