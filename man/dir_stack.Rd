@@ -14,8 +14,8 @@ dir_stack(path = ".", pattern = "\\\\.csv$", file_paths = NULL,
 
 \item{pattern}{Regular expression to match on file names.}
 
-\item{file_paths}{A vector of files paths. If supplied, /code{path},
-/code{pattern} and \code{recursive} are ignored.}
+\item{file_paths}{A vector of files paths. If supplied, \code{path},
+\code{pattern} and \code{recursive} are ignored.}
 
 \item{ind}{Logical or numeric indices used to subset file_paths.}
 

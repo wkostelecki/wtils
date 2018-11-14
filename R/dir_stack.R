@@ -2,8 +2,8 @@
 #'
 #' @param path Path to a directory.
 #' @param pattern Regular expression to match on file names.
-#' @param file_paths A vector of files paths. If supplied, /code{path},
-#'   /code{pattern} and \code{recursive} are ignored.
+#' @param file_paths A vector of files paths. If supplied, \code{path},
+#'   \code{pattern} and \code{recursive} are ignored.
 #' @param ind Logical or numeric indices used to subset file_paths.
 #' @param recursive passed to \code{list.files()}
 #' @param func A function for processing object read in by \code{read_func()}
