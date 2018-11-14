@@ -7,7 +7,7 @@
 xsummary = function(..., sample = 2) {
   x = list(...)
   if (is.null(names(x)) || any(names(x) == "")) {
-    names(x) = paste1("V", seq_along(x))
+    names(x) = paste0("V", seq_along(x))
   }
   purrr::map2(x, names(x),
               function(x, y) data.frame(name = y,
