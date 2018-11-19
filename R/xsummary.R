@@ -3,7 +3,9 @@
 #' @param ... Vectors for intersection summary
 #' @param sample Number of samples to show from each group.
 #' @export
-
+#' @examples
+#' xsummary(letters, letters)
+#' xsummary(1:4, 2:8, sample = 5)
 xsummary = function(..., sample = 2) {
   x = list(...)
   if (is.null(names(x)) || any(names(x) == "")) {
@@ -21,7 +23,9 @@ xsummary = function(..., sample = 2) {
     dplyr::group_by(name) %>%
     dplyr::summarize(Unique = n(),
                      Overlap = sum(n),
-                     sample = paste(sample(value, sample), collapse = ", ")) %>%
+                     sample = paste(
+                       if (length(value) <= sample) value else sample(value, sample),
+                       collapse = ", ")) %>%
     dplyr::ungroup() %>%
     dplyr::transmute(Name = name,
                      Unique = Unique,
