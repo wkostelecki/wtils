@@ -74,15 +74,26 @@ column_summary.default = function(x, ...){
 }
 
 column_summary.numeric = function(x, ...){
-  data.frame(Min = min(x, na.rm = TRUE),
+
+  sum_nas = sum(is.na(x))
+  if (sum_nas == length(x)) {
+    min_x = NA_real_
+    max_x = NA_real_
+  } else {
+    min_x = min(x, na.rm = TRUE)
+    max_x = max(x, na.rm = TRUE)
+  }
+
+  data.frame(Min = min_x,
              Med = median(x, na.rm = TRUE),
              Mean = mean(x, na.rm = TRUE),
-             Max = max(x, na.rm = TRUE),
+             Max = max_x,
              Sum = sum(as.numeric(x), na.rm = TRUE),
              Non0 = sum(x != 0, na.rm = TRUE),
              gt0 = sum(x > 0, na.rm = TRUE),
-             NAs = sum(is.na(x)),
+             NAs = sum_nas,
              stringsAsFactors = FALSE)
+
 }
 
 column_summary.logical = function(x, ...){
